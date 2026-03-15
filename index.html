@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VertaxEdge Advisors | Tax, Audit & Advisory Services</title>
+
+  <meta name="description" content="VertaxEdge Advisors offers tax consulting, audit, compliance, advisory and corporate services.">
+  <meta name="keywords" content="Tax Consultant, GST, Income Tax, Audit, Advisory, Compliance">
+  <meta name="author" content="VertaxEdge Advisors">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="Style/Style.css">
+  
+  
+  
+  <!-- CHAT WIDGET CSS (ISOLATED) -->
+  <style>
+    #chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99999;
+    }
+
+    #chat-icon {
+      width: 56px;
+      height: 56px;
+      background: #0a2a66;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #chat-icon::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      background: #0a2a66;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    #chat-icon:hover::after {
+      opacity: 1;
+    }
+
+    #chat-popup {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      display: none;
+    }
+
+    .chat-header {
+      background: #0a2a66;
+      color: #fff;
+      padding: 12px;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-header button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #chat-popup form {
+      padding: 15px;
+    }
+
+    #chat-popup input,
+    #chat-popup select,
+    #chat-popup textarea {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+
+    #submitBtn {
+      width: 100%;
+      background: #0a2a66;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .loader {
+      width: 18px;
+      height: 18px;
+      border: 3px solid #fff;
+      border-top: 3px solid transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      #chat-popup {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
+  
+  
+  
+</head>
+<script>
+  function toggleMenu() {
+    document.getElementById("nav").classList.toggle("active");
+  }
+</script>
+<script>
+  document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+  });
+</script>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+<div class="brand">
+  <img src="Logo/VertexEdgeLogo.png" alt="VertaxEdge Logo">
+
+  <div class="brand-text">
+    <span class="brand-name">
+      <span class="brand-vertex">Vertax</span><span class="brand-edge">Edge</span>
+    </span>
+    <span class="brand-tagline">Tax & Accounting Services</span>
+  </div>
+</div>
+
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <h1>Trusted Tax & Advisory Experts</h1>
+  <p>Delivering clarity, compliance & confidence to businesses and individuals</p>
+
+  <div class="hero-btns">
+    <a href="#contact" class="btn">Get Consultation</a>
+    <a href="https://wa.me/917660055894" class="btn outline">WhatsApp</a>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <p class="center">
+    VertaxEdge Advisors is a professional consulting firm delivering tax,
+    audit, advisory and compliance services with integrity, accuracy and excellence.
+  </p>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section grey" id="services">
+  <h2>Our Services</h2>
+
+  <div class="grid">
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>Income Tax Returns</h4></div>
+        <div class="flip-back"><p>Individual & business returns, tax planning.</p></div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>GST Registration & Returns</h4></div>
+        <div class="flip-back"><p>GST registration, filings & compliance.</p></div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>Accounting & Bookkeeping</h4></div>
+        <div class="flip-back"><p>MIS, audit-ready books & reports.</p></div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>TDS & Payroll</h4></div>
+        <div class="flip-back"><p>TDS returns & payroll processing.</p></div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>MCA Registrations</h4></div>
+        <div class="flip-back"><p>Company incorporation & ROC filings.</p></div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>Statutory Compliance</h4></div>
+        <div class="flip-back"><p>PF, ESI & labor law compliance.</p></div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>Projections & CMA</h4></div>
+        <div class="flip-back"><p>Financial projections & CMA reports.</p></div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"><h4>MSME Loan Assistance</h4></div>
+        <div class="flip-back"><p>End-to-end MSME loan support.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="section" id="team">
+  <h2>Leadership Team</h2>
+
+  <div class="grid team">
+    <div class="team-card">
+      <img src="Images/Subbareddy.png" alt="Founder">
+      <h4>G. SubbaReddy</h4>
+      <span>Founder & Principal Advisor</span>
+    </div>
+
+    <div class="team-card">
+      <img src="Images/Srikanth.png" alt="Director">
+      <h4>G. Srikanth Reddy</h4>
+      <span>Director</span>
+    </div>
+  </div>
+</section>
+<section class="section stats-section" id="stats">
+  <div class="grid stats-grid">
+
+    
+    <div class="stat-card">
+      <h3 class="counter" data-target="99" data-suffix="%">0</h3>
+      <p>Tax Savings</p>
+    </div>
+
+    <div class="stat-card">
+      <h3 class="counter" data-target="100"data-suffix="%">0</h3>
+      <p>Advisory</p>
+    </div>
+
+   
+
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section grey" id="testimonials">
+  <h2>What Clients Say</h2>
+
+  <div class="grid">
+    <div class="testimonial">
+      “Highly professional team with excellent tax advisory services.”
+    </div>
+    <div class="testimonial">
+      “Reliable compliance support and prompt response.”
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact-box">
+    <p>📞 +91 76600 55894</p>
+    <p>✉️ info@vertaxedge.com</p>
+    <p>🕘 Mon – Sat : 9:30 AM – 7:00 PM</p>
+  </div>
+</section>
+
+
+
+
+<!-- ================= CHAT WIDGET ================= -->
+<div id="chat-widget">
+  <div id="chat-icon" data-tooltip="Get Consultation" onclick="toggleChat()">
+    <i class="fa-solid fa-comments"></i>
+  </div>
+
+  <div id="chat-popup">
+    <div class="chat-header">
+      <span>Hi 👋 Get Expert Tax Assistance</span>
+      <button onclick="toggleChat()">✖</button>
+    </div>
+
+    <form id="leadForm"
+          action="https://formsubmit.co/ajax/info@vertaxedge.com"
+          method="POST"
+          target="hidden_iframe"
+          onsubmit="return handleSubmit();">
+
+      <input type="hidden" name="_captcha" value="false">
+<!-- 🔥 ADD THIS -->
+	  
+	  <input type="hidden" name="_subject" value="New Website Lead | VertaxEdge">
+	  <input type="hidden" name="_template" value="table">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="tel" name="Mobile" placeholder="Mobile Number" required>
+      <input type="email" name="Email" placeholder="Email Address" required>
+
+      <select name="Service Type" required>
+        <option value="">Select Service</option>
+	<option>Income Tax Returns</option>
+	<option>GST Registration & Returns</option>
+	<option>Accounting & Book keeping</option>
+	<option>TDS & Payroll</option>	  
+	<option>MCA Registrations</option>
+	<option>Statutory Compliance</option>
+	<option>Projections & CMA</option>
+	<option>MSME Loan Assistance</option>
+      </select>
+
+      <textarea name="Message" placeholder="Additional Information"></textarea>
+
+      <button type="submit" id="submitBtn">
+        <span id="btnText">Submit</span>
+        <span id="loader" class="loader" style="display:none;"></span>
+      </button>
+
+      <p id="success-msg" style="display:none;color:green;">
+        ✅ Thank you! We’ll contact you shortly.
+      </p>
+    </form>
+  </div>
+</div>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+
+
+
+
+
+
+
+
+
+<!-- Hidden iframe -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2026 VertaxEdge Advisors. All rights reserved.
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  function toggleMenu() {
+    document.getElementById("nav").classList.toggle("active");
+  }
+</script>
+<script>
+  document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("active");
+    });
+  });
+</script>
+
+<script>
+  const counters = document.querySelectorAll(".counter");
+  let started = false;
+
+  function startCounters() {
+    if (started) return;
+    started = true;
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      let count = 0;
+      const increment = Math.ceil(target / 100);
+
+      const updateCount = () => {
+        count += increment;
+        if (count < target) {
+          counter.innerText = count;
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.innerText = target + (target >= 50 ? "%" : "");
+        }
+      };
+
+      updateCount();
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      startCounters();
+    }
+  }, { threshold: 0.4 });
+
+  observer.observe(document.querySelector("#stats"));
+</script>
+
+<script>
+
+function handleSubmit() {
+  const btnText = document.getElementById("btnText");
+  const loader = document.getElementById("loader");
+  const successMsg = document.getElementById("success-msg");
+  const popup = document.getElementById("chat-popup");
+  const form = document.getElementById("leadForm");
+
+  // Show loader
+  btnText.style.display = "none";
+  loader.style.display = "inline-block";
+
+  // Hide success message initially
+  successMsg.style.display = "none";
+
+  // WhatsApp logic (optional)
+  const name = form.querySelector('[name="Name"]').value;
+  const mobile = form.querySelector('[name="Mobile"]').value;
+  const service = form.querySelector('[name="Service Type"]').value;
+
+  const msg = `New Lead:
+Name: ${name}
+Mobile: ${mobile}
+Service: ${service}`;
+
+  const whatsappNumber = "917660055894";
+
+  setTimeout(() => {
+    // OPTIONAL – comment this if you don’t want redirect
+    // window.location.href =
+    //   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+  }, 800);
+
+  // ✅ Show success message AFTER submit
+  setTimeout(() => {
+    loader.style.display = "none";
+    btnText.style.display = "inline";
+    successMsg.style.display = "block";
+  }, 1000);
+
+  // ✅ Close popup AFTER user sees success
+  setTimeout(() => {
+    popup.style.display = "none";
+    form.reset();
+  }, 3500);
+
+  return true; // allow FormSubmit to send email
+}
+
+</script>
+
+<script>
+function toggleChat() {
+  const popup = document.getElementById("chat-popup");
+  const successMsg = document.getElementById("success-msg");
+  const loader = document.getElementById("loader");
+  const btnText = document.getElementById("btnText");
+
+  const opening = popup.style.display !== "block";
+  popup.style.display = opening ? "block" : "none";
+
+  if (opening) {
+    successMsg.style.display = "none";
+    loader.style.display = "none";
+    btnText.style.display = "inline";
+  }
+}
+</script>
+
+</body>
+</html>
