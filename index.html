@@ -144,9 +144,49 @@
       }
     }
 
-ul {
-    margin-top: 10px;
-    line-height: 1.8;
+.about-title{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.about-content{
+    max-width:700px;
+    margin:0 auto;
+    text-align:left;
+}
+
+.focus-list{
+    padding-left:20px;
+    line-height:1.8;
+}
+
+.about-content{
+    max-width:680px;
+    margin:auto;
+}
+.about-content p{
+    line-height:1.7;
+}
+
+section{
+    padding:30px 20px;
+}
+.focus-list{
+    margin-top:10px;
+    padding-left:20px;
+    line-height:1.8;
+}
+
+.about-title::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:3px;
+    background:#2a5aa5;
+    margin:10px auto;
+}
+.about-title::after{
+    display:none;
 }
   </style>
   
@@ -216,21 +256,28 @@ ul {
 </section>
 
 <!-- ================= ABOUT ================= -->
-<section class="section" id="about">
-  <h2>About Us</h2>
-  <p class="center">
-   VertaxEdge is a professional tax and accounting consultancy providing reliable financial, taxation, 
-	and compliance services to businesses, startups, and individuals.
-  </p>
+<section id="about">
 
-<p><strong>We focus on:</strong></p>
+<h2 class="about-title">About Us</h2>
 
-<ul>
+<div class="about-content">
+
+<p>
+Vertax Edge is a professional tax and accounting consultancy providing reliable financial,
+taxation, and compliance services to businesses, startups, and individuals.
+</p>
+
+<p class="focus-title"><strong>We focus on:</strong></p>
+
+<ul class="focus-list">
 <li>Accuracy</li>
 <li>Timely Compliance</li>
 <li>Professional Advisory</li>
 <li>Technology-driven Accounting Solutions</li>
 </ul>
+
+</div>
+
 </section>
 
 <!-- ================= SERVICES ================= -->
